@@ -1,0 +1,51 @@
+server:
+  port: 8085
+  url: 'http://localhost:8085'
+
+spring:
+  datasource:
+          url: jdbc:mysql://142.93.214.116/ecommerce
+          username: axowave
+          password: eeeaf30cGETEVWf2sv
+          driver-class-name: com.mysql.cj.jdbc.Driver
+
+  mail:
+    host: smtp.gmail.com
+    port: 587
+    username: emailEkaDaganin@gmail.com
+    password: daganinPasswordEka
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
+
+logging:
+  file: Main/src/main/resources/exceptionLog/errorlog.log
+
+appConfig:
+  uploadBaseDir: Main/src/main/resources/static/public/uploads/
+  frontend-url: 'http://localhost:8085'
+
+keycloak:
+  auth-server-url: https://auth.axowave.com/auth
+  realm: dealbox
+  resource: website
+  public-client: true
+  ssl-required: none
+  realm-key: MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAtdxCCaAMjYMcHlWlN7osTD8YcLMSnrdNRAF9nbo34ILpjHMOW5Xw7yh2nIKxH9znup9gbdE3tD4L4tmp/1MyYP0rSJqY9zk1JW/P9Az0isTVpj9pdUyLHINDiTxSLGCmX9QPWo9rdbGiVJ8OVhiNWkrZ3pfZB6sTpxUe/bsH4lmAFHLqPcA1pddgWrxMi/of8RG/1BW05i4vPQCzbYcVIe+PgJ7t1+HFiq4rGtAupsFQOpRMppE3y2xkW42QFGCxjVqhA0pScS14TxSrqcl8ZTI8QvdmHqv6VJEgG8fSdAlQcCHGhrg75nsJM0NDGVZNqy+HpyF/KhdNu3/f4BvfaQIDAQAB
+#  onLoad: check-sso
+
+azure:
+  storage:
+    connection-string: DefaultEndpointsProtocol=https;AccountName=imagehariapp;AccountKey=iNFE593xMzAQFmWnXXnoJ0yFEzl3ulDRunE60iwZNrCnbtGoeWH0IYx4vP9AQjbD1yQZxrjII9Z28cmYwaVgQQ==;EndpointSuffix=core.windows.net
+
+
+digitalocean:
+  spaces:
+    access:
+      key: UXV3HQ7727PKAV57VVNT
+      secret: OYU2P8EwY/BbitSxHck5Amk8s8ES85CuSx5jiaWsMno
+    endpoint: https://imagespacedealbox.sgp1.digitaloceanspaces.com
+    region: ams3

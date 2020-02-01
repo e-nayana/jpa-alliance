@@ -1,0 +1,57 @@
+# JACKSON
+spring:
+  profiles:
+    active: dev
+
+  jackson:
+    serialization:
+      INDENT_OUTPUT: true
+
+  jpa:
+    database-platform: org.hibernate.dialect.MySQL5Dialect
+    hibernate:
+      ddl-auto: none
+    show-sql: true
+
+  servlet:
+    multipart:
+      max-file-size: 10MB
+      max-request-size: 10MB
+
+appConfig:
+  role-config:
+    public-customer-role-name: customer
+
+jwt:
+  header: Authorization
+  secret: mySecret
+  expiration: 604800
+
+logging:
+
+  pattern:
+      console: "%d %-5level %logger : %msg%n"
+      file: "%d %-5level [%thread] %logger : %msg%n"
+  level:
+    org.hibernate: info
+    org.springframework:
+      security: error
+
+
+Loggers:
+    logger:
+        name: org.apache.logging.log.test1
+        level: debug
+        additivity: false
+        file: log/production_app.log
+        ThreadContextMapFilter:
+          KeyValuePair:
+            key: test
+            value: 123
+        AppenderRef:
+          ref: STDOUT
+
+    Root:
+      level: error
+      AppenderRef:
+        ref: STDOUT
